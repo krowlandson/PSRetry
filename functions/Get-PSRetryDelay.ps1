@@ -35,7 +35,7 @@
 #>
 function Get-PSRetryDelay {
     [CmdletBinding(PositionalBinding = $true)]
-    [OutputType([int])]
+    [OutputType([System.Double],[System.Int64])]
     param (
         [Parameter(Mandatory = $false, Position=0, ParameterSetName = 'Fixed')]
         [Parameter(Mandatory = $false, Position=0, ParameterSetName = 'Linear')]

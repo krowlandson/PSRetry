@@ -42,6 +42,11 @@
     Returns the result of the specified Command
 #>
 function Invoke-PSRetryExpression {
+    # The following SuppressMessageAttribute entries are used to surpress
+    # PSScriptAnalyzer tests against known exceptions as per:
+    # https://github.com/powershell/psscriptanalyzer#suppressing-rules
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingInvokeExpression', '',
+        Justification='The whole point of this function is to run a command using Invoke-Expression')]
     [CmdletBinding()]
     param (
         [Parameter(Mandatory = $true, ValueFromPipeline, Position = 0, ParameterSetName = 'Default')]
