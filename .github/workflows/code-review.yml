@@ -1,5 +1,5 @@
 ---
-name: Code Review (Changes Only)
+name: Code Review
 
 ##########################################
 # Start the job on push for all branches #
@@ -22,11 +22,11 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v2
 
-    - name: Run Super-Linter (Changes Only)
+    - name: Run Super-Linter
       # Release tag v3.3.0 onwards includes arm-ttk linter
       uses: docker://github/super-linter:v3.3.2
       env:
-        # Only lint code which has been added or modified on push
-        VALIDATE_ALL_CODEBASE: false
+        # Lint all code on push
+        VALIDATE_ALL_CODEBASE: true
         # Need to define main branch as default is master
-        DEFAULT_BRANCH: master
+        DEFAULT_BRANCH: main
