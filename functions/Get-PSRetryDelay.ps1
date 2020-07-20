@@ -35,7 +35,7 @@
 #>
 function Get-PSRetryDelay {
     [CmdletBinding(PositionalBinding = $true)]
-    [OutputType([System.Double],[System.Int64])]
+    [OutputType([int])]
     param (
         [Parameter(Mandatory = $false, Position=0, ParameterSetName = 'Fixed')]
         [Parameter(Mandatory = $false, Position=0, ParameterSetName = 'Linear')]
@@ -62,13 +62,13 @@ function Get-PSRetryDelay {
     # Use process block to get the calculate and return the retry delay time
     process {
         if ($Exponential) {
-            return [math]::Pow($RetryMultiplier, $RetryCount)
+            return [int][math]::Pow($RetryMultiplier, $RetryCount)
         }
         elseif ($Linear) {
-            return [math]::BigMul($RetryMultiplier, $RetryCount)
+            return [int][math]::BigMul($RetryMultiplier, $RetryCount)
         }
         else {
-            return $RetryMultiplier
+            return [int]$RetryMultiplier
         }
     }
 }
