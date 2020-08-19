@@ -9,13 +9,13 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-RootModule = '.\PSRetry.psm1'
+RootModule = 'PSRetry.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.1.0'
+ModuleVersion = '0.1.1'
 
 # Supported PSEditions
-# CompatiblePSEditions = @()
+CompatiblePSEditions = 'Core', 'Desktop'
 
 # ID used to uniquely identify this module
 GUID = 'ff65a7d6-fb6a-4a1b-b787-c6bb172b94b0'
@@ -30,7 +30,7 @@ CompanyName = 'krowlandson'
 Copyright = 'Copyright (c) 2020 Kevin Rowlandson. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'This module provides a a set of PowerShell commands used to simplify adding retry logic to scripts and automation workflow.'
+Description = 'This module provides a set of PowerShell commands used to simplify adding retry logic to scripts and automation workflow.'
 
 # Minimum version of the PowerShell engine required by this module
 PowerShellVersion = '7.0'
@@ -92,11 +92,11 @@ AliasesToExport = 'iexretry'
 
 # List of all files packaged with this module
 FileList = @(
-    '.\functions\Get-PSRetryDelay.ps1'
-    '.\functions\Invoke-PSRetryExpression.ps1'
-    '.\functions\Wait-PSRetryDelay.ps1'
-    '.\PSRetry.psd1'
-    '.\PSRetry.psm1'
+    'functions\Get-PSRetryDelay.ps1'
+    'functions\Invoke-PSRetryExpression.ps1'
+    'functions\Wait-PSRetryDelay.ps1'
+    'PSRetry.psd1'
+    'PSRetry.psm1'
 )
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
@@ -133,7 +133,7 @@ PrivateData = @{
 } # End of PrivateData hashtable
 
 # HelpInfo URI of this module
-HelpInfoURI = 'https://github.com/krowlandson/PSRetry/README.md'
+HelpInfoURI = 'https://github.com/krowlandson/PSRetry/blob/master/README.md'
 
 # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
 # DefaultCommandPrefix = ''
